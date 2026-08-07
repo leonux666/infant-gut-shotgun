@@ -1,0 +1,28 @@
+# data & results (kept on scratch, not in git)
+data/*
+!data/.gitkeep
+results/*
+!results/.gitkeep
+*.fastq
+*.fastq.gz
+*.bam
+*.sam
+*.fa
+*.fna
+
+# nextflow
+work/
+.nextflow/
+.nextflow.log*
+
+# conda / python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+envs/
+
+# slurm
+slurm-*.out
+
+# os
+.DS_Store
