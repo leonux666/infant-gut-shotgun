@@ -1,0 +1,7 @@
+name: nfcore
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - nextflow=26.04.6
+  - nf-core=4.1.0
