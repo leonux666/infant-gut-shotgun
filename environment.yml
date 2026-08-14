@@ -5,3 +5,5 @@ channels:
 dependencies:
   - nextflow=26.04.6
   - nf-core=4.1.0
+  - pandas=3.0.5
+  - openpyxl=3.1.5

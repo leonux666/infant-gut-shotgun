@@ -66,9 +66,13 @@ rm ~/Miniforge3-Linux-x86_64.sh
 This environment holds only the workflow engine. Analysis software
 (MetaPhlAn4, HUMAnN3, MetaBAT2, ...) is **not** installed here — nf-core
 pipelines pull those as Singularity containers at runtime.
+It also carries `pandas` and `openpyxl`, which the metadata scripts under `src/`
+import directly. `pandas` arrives anyway as an indirect dependency of nf-core,
+but an indirect dependency is not a declared one — it is pinned here so the
+scripts do not silently break when nf-core changes its own requirements.
 
 ```bash
-mamba create -n nfcore -c conda-forge -c bioconda nextflow nf-core -y
+mamba create -n nfcore -c conda-forge -c bioconda nextflow nf-core pandas openpyxl -y
 ```
 
 Channel order matters: `conda-forge` must precede `bioconda`, per bioconda's
@@ -98,6 +102,8 @@ Verified versions:
 | mamba | 2.5.0 |
 | Nextflow | 26.04.6 |
 | nf-core/tools | 4.1.0 |
+| pandas | 3.0.5 |
+| openpyxl | 3.1.5 |
 
 Nextflow requires a JVM. If it fails to start, load the cluster's Java module
 first:
