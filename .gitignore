@@ -23,6 +23,7 @@ envs/
 
 # slurm
 slurm-*.out
+logs/
 
 # os
 .DS_Store
