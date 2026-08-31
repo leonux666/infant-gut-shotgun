@@ -134,6 +134,9 @@ a `prefix:` line containing the local installation path.
 
 - Analyses must **not** be run on Amarel login nodes. Package installation is
   I/O-bound and acceptable; anything compute-bound goes through SLURM.
-- Singularity is available as a module (`singularity/3.1.0`).
+- Containers are provided by Apptainer 1.5.3 at `/usr/bin/singularity` on the
+  production login nodes. The `singularity/3.1.0` module must **not** be loaded:
+  it is a non-functional leftover that shadows the working binary. See `docs/05`
+  for the full diagnosis.
 - Storage split: code and environments in `$HOME`; raw reads, intermediate
   files, and Nextflow work directories in `/scratch/$USER`.
